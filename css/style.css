@@ -1,0 +1,640 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ff4d4d;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+header ul li {
+  margin-left: 25px;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header ul li a:hover {
+  color: black;
+}
+
+/* ===== HERO SECTION ===== */
+main section:first-child {
+  height: 80vh;
+  background: url('/image/camlin.png') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+main section:first-child::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+main section:first-child img,
+main section:first-child p,
+main section:first-child input {
+  position: relative;
+  z-index: 1;
+}
+
+main section:first-child img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+main section:first-child p {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ===== SEARCH BAR ANIMATION ===== */
+main section:first-child input {
+  padding: 12px 20px;
+  width: 300px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.4s ease;
+}
+
+main section:first-child input:focus {
+  width: 420px;
+  box-shadow: 0 0 12px #ff4d4d;
+}
+
+/* ===== FEATURES SECTION ===== */
+main section:nth-child(2) {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.main-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.feature h3 {
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #ff4d4d;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  header ul {
+    margin-top: 10px;
+  }
+
+  .logo img {
+    width: 60px;
+  }
+
+  main section:first-child input {
+    width: 80%;
+  }
+
+  main section:first-child input:focus {
+    width: 90%;
+  }
+}
+
+
+/* =============================================
+   LOGIN & SIGNUP — Ring Animation
+   ============================================= */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 130px);
+  background: #0d0f14;
+}
+
+.ring-wrapper {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring-wrapper .ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: spinRing 8s linear infinite;
+}
+
+.ring-wrapper .ring circle {
+  fill: none;
+  stroke: #ff4d4d;
+  stroke-width: 3;
+  stroke-dasharray: 8 6;
+  stroke-linecap: round;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 6px #ff4d4d);
+}
+
+.ring-wrapper .ring2 {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  pointer-events: none;
+  animation: spinRing 12s linear infinite reverse;
+}
+
+.ring-wrapper .ring2 circle {
+  fill: none;
+  stroke: rgba(255, 77, 77, 0.3);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 10;
+  stroke-linecap: round;
+}
+
+@keyframes spinRing {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.form-box {
+  position: relative;
+  z-index: 1;
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  box-shadow: 0 0 40px rgba(255, 77, 77, 0.1),
+              0 20px 60px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.form-box h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ff4d4d;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 0 16px rgba(255, 77, 77, 0.5);
+}
+
+.input-box {
+  width: 100%;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin: 0;
+  border-radius: 8px;
+  border: 1.5px solid #2a2a3e;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+
+.input-box input::placeholder {
+  color: #888;
+}
+
+.input-box input:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 12px rgba(255, 77, 77, 0.3);
+  transform: scale(1.02);
+}
+
+.forgot-password {
+  align-self: flex-end;
+  margin-top: -0.3rem;
+}
+
+.forgot-password a {
+  font-size: 0.78rem;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-password a:hover {
+  color: #ff4d4d;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(255, 77, 77, 0.35);
+}
+
+.btn:hover {
+  background: #e03c3c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 77, 77, 0.5);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.signup-link,
+.login-link {
+  font-size: 0.82rem;
+  color: #888;
+}
+
+.signup-link a,
+.login-link a {
+  color: #ff4d4d;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.signup-link a:hover,
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+#message {
+  font-size: 0.82rem;
+  min-height: 1.2em;
+  color: #ff4d4d;
+}
+
+@media (max-width: 400px) {
+  .ring-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .form-box {
+    width: 230px;
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+
+/* =============================================
+   ADD RESTAURANT — form (no rings)
+   ============================================= */
+
+.form-container > .form-box {
+  width: 420px;
+  max-width: 92vw;
+  padding: 2.5rem 2rem;
+  gap: 1rem;
+}
+
+.form-container > .form-box h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+#rating {
+  appearance: textfield;
+}
+
+#rating::-webkit-inner-spin-button,
+#rating::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* =============================================
+   INVESTOR PAGE
+   ============================================= */
+
+.investor-hero {
+  height: 40vh;
+  background: url('/image/camlin.png') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.investor-hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.investor-hero h1,
+.investor-hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.investor-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+}
+
+.investor-hero p {
+  font-size: 1rem;
+  color: #ddd;
+  max-width: 520px;
+}
+
+.investor-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.investor-section:last-child {
+  border-bottom: none;
+}
+
+.investor-section h2 {
+  color: #ff4d4d;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.investor-section p {
+  color: #555;
+  line-height: 1.75;
+  font-size: 0.97rem;
+}
+
+.investor-section .feature {
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.investor-section .feature h3 {
+  color: #ff4d4d;
+}
+
+.report-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.report-list li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.report-list li a::before {
+  content: '↗';
+  color: #ff4d4d;
+  font-size: 0.85rem;
+}
+
+.report-list li a:hover {
+  background: #ff4d4d;
+  color: #fff;
+  border-color: #ff4d4d;
+}
+
+.report-list li a:hover::before {
+  color: #fff;
+}
+
+
+/* =============================================
+   FLIP CARD — index.html feature cards
+   ============================================= */
+
+.feature {
+  perspective: 1000px;
+  cursor: pointer;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.feature-inner {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  border-radius: 10px;
+}
+
+.feature.flipped .feature-inner {
+  transform: rotateY(180deg);
+}
+
+.feature-front,
+.feature-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.feature-front {
+  background: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.feature-front h3 {
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
+
+.feature-front p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.feature-back {
+  background: #ff4d4d;
+  color: white;
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 16px rgba(255,77,77,0.35);
+}
+
+.feature-back h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.feature-back p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+
+/* =============================================
+   HAMBURGER MENU
+   ============================================= */
+header {
+  position: relative;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.nav-hidden {
+  display: none;
+}
+
+.nav-open {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 999;
+  min-width: 200px;
+  padding: 10px 0;
+}
+
+.nav-open ul {
+  flex-direction: column;
+  gap: 0;
+}
+
+.nav-open ul li {
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-open ul li:last-child {
+  border-bottom: none;
+}
+
+.nav-open ul li a {
+  display: block;
+  padding: 12px 20px;
+  color: #333 !important;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.nav-open ul li a:hover {
+  background: #fff5f5;
+  color: #ff4d4d !important;
+}
