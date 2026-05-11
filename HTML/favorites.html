@@ -1,8 +1,9 @@
+<!-- favorites.html mein ye sahi hona chahiye -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Profile | Zomato Clone</title>
-<link rel="stylesheet" href="../CSS/style.css"/>
+<title>Favorites | Zomato Clone</title>
+<link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
 
@@ -13,41 +14,17 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="orders.html">Orders</a></li>
-      <li><a href="cart.html">Cart</a></li>
+      <li><a href="restaurants.html">Restaurants</a></li>
+      <li><a href="profile.html">Profile</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <div class="profile-card">
-
-    <div class="profile-avatar">👤</div>
-
-    <h2 id="profileName" class="profile-name">Guest User</h2>
-    <p id="profileEmail" class="profile-email">No email found</p>
-
-    <div class="profile-stats">
-
-      <div class="profile-stat-row">
-        <span class="stat-label">Orders</span>
-        <span id="profileOrders" class="stat-value">0</span>
-      </div>
-
-      <div class="profile-stat-row">
-        <span class="stat-label">Cart Items</span>
-        <span id="profileCart" class="stat-value">0</span>
-      </div>
-
-      <div class="profile-stat-row">
-        <span class="stat-label">Member Since</span>
-        <span id="profileDate" class="stat-value">2026</span>
-      </div>
-
-    </div>
-
-    <button class="btn" onclick="logoutUser()">Logout</button>
-
+  <div id="favoritesList" style="padding:20px; max-width:800px; margin:0 auto;">
+    <p style="text-align:center; color:#888; margin-top:40px;">
+      No favorites added yet ❤️
+    </p>
   </div>
 </main>
 
