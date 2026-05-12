@@ -9,6 +9,9 @@
 body {
   background-color: #fff;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ===== HEADER ===== */
@@ -18,6 +21,7 @@ header {
   align-items: center;
   padding: 10px 40px;
   background-color: #ff4d4d;
+  position: relative;
 }
 
 .logo img {
@@ -48,7 +52,7 @@ header ul li a:hover {
 /* ===== HERO SECTION ===== */
 main section:first-child {
   height: 80vh;
-  background: url('/image/camlin.png') no-repeat center center/cover;
+  background: url('../image/camlin.png') no-repeat center center/cover; /* ✅ FIXED */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,6 +145,11 @@ footer {
   margin-top: 30px;
 }
 
+/* ===== MAIN ===== */
+main {
+  flex: 1;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   header {
@@ -168,7 +177,6 @@ footer {
 /* =============================================
    LOGIN & SIGNUP — Ring Animation
    ============================================= */
-
 .form-container {
   display: flex;
   justify-content: center;
@@ -359,7 +367,6 @@ footer {
 /* =============================================
    ADD RESTAURANT — form (no rings)
    ============================================= */
-
 .form-container > .form-box {
   width: 420px;
   max-width: 92vw;
@@ -386,10 +393,9 @@ footer {
 /* =============================================
    INVESTOR PAGE
    ============================================= */
-
 .investor-hero {
   height: 40vh;
-  background: url('/image/camlin.png') no-repeat center center/cover;
+  background: url('../image/camlin.png') no-repeat center center/cover; /* ✅ FIXED */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -498,9 +504,8 @@ footer {
 
 
 /* =============================================
-   FLIP CARD — index.html feature cards
+   FLIP CARD
    ============================================= */
-
 .feature {
   perspective: 1000px;
   cursor: pointer;
@@ -571,13 +576,10 @@ footer {
   color: rgba(255,255,255,0.9);
 }
 
+
 /* =============================================
    HAMBURGER MENU
    ============================================= */
-header {
-  position: relative;
-}
-
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -638,3 +640,142 @@ header {
   background: #fff5f5;
   color: #ff4d4d !important;
 }
+
+
+/* =============================================
+   ORDERS PAGE
+   ============================================= */
+.orders-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.orders-title {
+  color: #ff4d4d;
+  margin: 30px 0 20px;
+}
+
+.order-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.order-card-header h3 {
+  color: #ff4d4d;
+}
+
+.order-status {
+  background: #ff4d4d;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+}
+
+.order-info {
+  color: #555;
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+.order-total {
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.orders-empty {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.orders-empty p {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.orders-empty a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.orders-empty a:hover {
+  background: #e03c3c;
+}
+
+
+/* =============================================
+   PROFILE PAGE
+   ============================================= */
+.profile-card {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(255, 77, 77, 0.1);
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.profile-name {
+  color: #ff4d4d;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.profile-email {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.profile-stats {
+  border-top: 1px solid #2a2a3e;
+  padding-top: 20px;
+}
+
+.profile-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+.profile-stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-label { color: #888; }
+
+.stat-value { color: white; font-weight: bold; }
