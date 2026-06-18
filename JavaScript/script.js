@@ -342,7 +342,7 @@ if (ordersList) {
     ordersList.innerHTML = `
       <div class="orders-empty">
         <p>No orders yet 🍽️</p>
-        <a href="index.html">Order Now</a>
+       <a href="../index.html">Home</a>
       </div>
     `;
   } else {
